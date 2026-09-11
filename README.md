@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔍 ViolenciaTechReddit
+# ViolenciaTechReddit
 
 ### Detección Multinivel de Violencia Simbólica contra Mujeres en Comunidades Tecnológicas de Reddit mediante BERT
 
@@ -16,7 +16,7 @@
 
 <br>
 
-**[📄 Artículo](#-publicación) · [📊 Resultados](#-resultados-principales) · [🏗️ Arquitectura](#️-arquitectura-del-sistema) · [🚀 Cómo ejecutar](#-cómo-ejecutar-el-pipeline) · [📚 Citar](#-cómo-citar)**
+**[Artículo](#-publicación) · [Resultados](#-resultados-principales) · [Arquitectura](#️-arquitectura-del-sistema) · [Cómo ejecutar](#-cómo-ejecutar-el-pipeline) · [Citar](#-cómo-citar)**
 
 </div>
 
@@ -42,23 +42,23 @@ Este proyecto propone un **sistema de cuatro niveles** que analiza **184,572 tex
 
 | | Indicador | Resultado |
 |:---:|:---|:---:|
-| 🎯 | Accuracy del modelo BERT | **84.90 %** |
-| ⚖️ | F1-macro | **0.85** |
-| 📏 | Violencia detectada por reglas (línea base) | 9.4 % |
-| 🤖 | Violencia detectada por BERT | 23.3 % *(2.5× más que las reglas)* |
-| ✅ | Violencia tras post-procesamiento | **22.3 %** |
-| 🔴 | Violencia directa / 🟠 sutil / 🟢 neutral | 10.9 % / 11.4 % / 77.7 % |
-| 💬 | Violencia **testimonial** (relatos de experiencias vividas) | **99.9 %** |
-| 📉 | Tendencia 2016–2026 | ↓ significativa (r² = 0.58, p = 0.0067) |
+| | Accuracy del modelo BERT | **84.90 %** |
+| | F1-macro | **0.85** |
+| | Violencia detectada por reglas (línea base) | 9.4 % |
+| | Violencia detectada por BERT | 23.3 % *(2.5× más que las reglas)* |
+| | Violencia tras post-procesamiento | **22.3 %** |
+| | Violencia directa / 🟠 sutil / 🟢 neutral | 10.9 % / 11.4 % / 77.7 % |
+| | Violencia **testimonial** (relatos de experiencias vividas) | **99.9 %** |
+| | Tendencia 2016–2026 | ↓ significativa (r² = 0.58, p = 0.0067) |
 
 </div>
 
 ### Hallazgos clave
 
-- **💜 Las comunidades funcionan como redes de apoyo.** El 99.9 % de la violencia detectada corresponde a mujeres relatando experiencias vividas en otros espacios; solo **30 textos** contienen agresiones activas dentro de la conversación.
-- **👁️ La violencia sutil es tan frecuente como la directa.** Casi la mitad de la violencia detectada no usa lenguaje explícito.
-- **📉 La violencia disminuye, pero lentamente.** Baja alrededor de 0.36 puntos porcentuales por año, y aun así se mantiene por encima del 20 % en casi todo el periodo.
-- **🏢 El tipo de violencia depende del espacio.** En comunidades técnicas (r/learnprogramming, r/experienceddevs, r/webdev) predomina la violencia sutil; en r/TwoXChromosomes y r/antiwork predomina la directa.
+- ** Las comunidades funcionan como redes de apoyo.** El 99.9 % de la violencia detectada corresponde a mujeres relatando experiencias vividas en otros espacios; solo **30 textos** contienen agresiones activas dentro de la conversación.
+- ** La violencia sutil es tan frecuente como la directa.** Casi la mitad de la violencia detectada no usa lenguaje explícito.
+- ** La violencia disminuye, pero lentamente.** Baja alrededor de 0.36 puntos porcentuales por año, y aun así se mantiene por encima del 20 % en casi todo el periodo.
+- ** El tipo de violencia depende del espacio.** En comunidades técnicas (r/learnprogramming, r/experienceddevs, r/webdev) predomina la violencia sutil; en r/TwoXChromosomes y r/antiwork predomina la directa.
 
 <div align="center">
 <img src="images/resultados/fig1_resultados_generales.png" alt="Resultados generales del sistema" width="90%">
@@ -68,7 +68,7 @@ Este proyecto propone un **sistema de cuatro niveles** que analiza **184,572 tex
 
 ---
 
-## 🏗️ Arquitectura del sistema
+##  Arquitectura del sistema
 
 El sistema procesa cada texto en **cuatro niveles consecutivos**:
 
@@ -107,11 +107,11 @@ El sistema procesa cada texto en **cuatro niveles consecutivos**:
 
 ```mermaid
 flowchart LR
-    A["📥 01<br>Extracción<br><sub>201,182 textos</sub>"] --> B["🔎 02<br>Análisis<br>exploratorio"]
-    B --> C["🧹 03<br>Limpieza<br><sub>184,572 textos</sub>"]
-    C --> D["📏 04<br>Reglas<br><sub>9.4 %</sub>"]
-    D --> E["🤖 05<br>BERT<br><sub>84.90 %</sub>"]
-    E --> F["📊 06<br>Análisis final<br><sub>22.3 % · 99.9 %</sub>"]
+    A[" 01<br>Extracción<br><sub>201,182 textos</sub>"] --> B["🔎 02<br>Análisis<br>exploratorio"]
+    B --> C[" 03<br>Limpieza<br><sub>184,572 textos</sub>"]
+    C --> D[" 04<br>Reglas<br><sub>9.4 %</sub>"]
+    D --> E[" 05<br>BERT<br><sub>84.90 %</sub>"]
+    E --> F[" 06<br>Análisis final<br><sub>22.3 % · 99.9 %</sub>"]
 
     classDef datos fill:#DBEAFE,stroke:#2563EB,color:#1E3A8A
     classDef proc fill:#EDE9FE,stroke:#7C3AED,color:#4C1D95
@@ -142,7 +142,7 @@ flowchart LR
 ```
 ViolenciaTechReddit/
 │
-├── 📓 notebooks/                    Pipeline completo
+├──  notebooks/                    Pipeline completo
 │   ├── 01_Extraccion_Reddit.ipynb
 │   ├── 02_Analisis_Exploratorio.ipynb
 │   ├── 03_Limpieza_Preprocesamiento.ipynb
@@ -150,17 +150,17 @@ ViolenciaTechReddit/
 │   ├── 05_BERT_Colab.ipynb
 │   └── 06_Final_Analisis.ipynb
 │
-├── 💾 data/
+├──  data/
 │   ├── raw/                         IDs públicos del corpus (reddit_ids_publicos.csv)
 │   ├── processed/                   CSVs limpios y clasificados (no incluidos)
 │   └── models/                      Modelo BERT entrenado (no incluido)
 │
-├── 🖼️ images/
+├──  images/
 │   ├── diagramas/                   Diagramas de arquitectura
 │   ├── exploratorio/                Figuras del análisis exploratorio
 │   └── resultados/                  Figuras de resultados (español y *_en.png en inglés)
 │
-├── ⚙️ config/
+├──  config/
 │   └── credentials_template.py      Plantilla de credenciales de la API de Reddit
 │
 ├── .gitignore
@@ -202,7 +202,7 @@ Completa tus credenciales de la [API de Reddit](https://www.reddit.com/prefs/app
 ```
 
 <details>
-<summary><b>☁️ Pasos para el notebook 05 en Google Colab</b> (clic para ver)</summary>
+<summary><b> Pasos para el notebook 05 en Google Colab</b> (clic para ver)</summary>
 <br>
 
 1. Sube `data/processed/reddit_data_balanceado_bert.csv` a tu Google Drive.
@@ -219,7 +219,7 @@ Completa tus credenciales de la [API de Reddit](https://www.reddit.com/prefs/app
 
 ---
 
-## 🔐 Datos y privacidad
+## Datos y privacidad
 
 Por privacidad de las personas usuarias y por los términos de servicio de Reddit, **este repositorio no incluye los textos del corpus ni los nombres de usuario**.
 
@@ -234,7 +234,7 @@ En su lugar, `data/raw/reddit_ids_publicos.csv` contiene los identificadores de 
 | `en_corpus_limpio` | `True` si el texto forma parte de los 184,572 del corpus final |
 
 <details>
-<summary><b>🔧 Cómo reconstruir el corpus con la API de Reddit</b> (clic para ver)</summary>
+<summary><b> Cómo reconstruir el corpus con la API de Reddit</b> (clic para ver)</summary>
 <br>
 
 ```python
@@ -265,9 +265,9 @@ Algunos textos pueden ya no estar disponibles si fueron borrados después de la 
 
 <table>
 <tr>
-<th align="center">💜 Apoyo para mujeres (5)</th>
-<th align="center">💻 Profesionales mixtas (9)</th>
-<th align="center">🏢 Laborales y generales (3)</th>
+<th align="center"> Apoyo para mujeres (5)</th>
+<th align="center"> Profesionales mixtas (9)</th>
+<th align="center"> Laborales y generales (3)</th>
 </tr>
 <tr>
 <td valign="top">
@@ -304,11 +304,11 @@ r/AskWomen
 
 ---
 
-## 📄 Publicación
+## Publicación
 
 Este trabajo fue publicado en el ***International Journal of Combinatorial Optimization Problems and Informatics*** (IJCOPI), vol. 17, núm. 5, 2026, pp. 14–36.
 
-## 📚 Cómo citar
+###  Cómo citar
 
 Si utilizas este trabajo, por favor cita el artículo:
 
@@ -334,7 +334,7 @@ Si utilizas este trabajo, por favor cita el artículo:
 
 ---
 
-## 👩‍💻 Autoría
+## Autoría
 
 <div align="center">
 
