@@ -1,4 +1,4 @@
-# Ccompleta los datos
+# Completa los datos
 
 REDDIT_CLIENT_ID     = "TU_CLIENT_ID_AQUI"
 REDDIT_CLIENT_SECRET = "TU_CLIENT_SECRET_AQUI"
