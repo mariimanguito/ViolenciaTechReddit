@@ -4,19 +4,15 @@
 
 ### Detección Multinivel de Violencia Simbólica contra Mujeres en Comunidades Tecnológicas de Reddit mediante BERT
 
-*Un sistema de procesamiento de lenguaje natural para identificar las formas sutiles de discriminación que las herramientas tradicionales no detectan.*
+*Sistema multinivel basado en BERT para la detección automática de violencia simbólica, capaz de distinguir entre la violencia ejercida y la violencia relatada en el discurso digital.*
 
 <br>
 
 [![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)](https://pytorch.org/)
-[![Transformers](https://img.shields.io/badge/🤗_Transformers-4.40.0-FFD21E?style=for-the-badge)](https://huggingface.co/docs/transformers)
 [![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/)
 [![Reddit API](https://img.shields.io/badge/Reddit_API-FF4500?style=for-the-badge&logo=reddit&logoColor=white)](https://www.reddit.com/dev/api/)
 
-[![DOI](https://img.shields.io/badge/DOI-10.61467%2F2007.1558.2026.v17i5.1404-7B2CBF?style=flat-square)](https://doi.org/10.61467/2007.1558.2026.v17i5.1404)
-[![Licencia: MIT](https://img.shields.io/badge/Licencia-MIT-2EA44F?style=flat-square)](LICENSE)
-[![UAEH](https://img.shields.io/badge/UAEH-Ciencias_Computacionales-8B1538?style=flat-square)](https://www.uaeh.edu.mx/)
 
 <br>
 
@@ -115,7 +111,7 @@ flowchart LR
     B --> C["🧹 03<br>Limpieza<br><sub>184,572 textos</sub>"]
     C --> D["📏 04<br>Reglas<br><sub>9.4 %</sub>"]
     D --> E["🤖 05<br>BERT<br><sub>84.90 %</sub>"]
-    E --> F["📊 07<br>Análisis final<br><sub>22.3 % · 99.9 %</sub>"]
+    E --> F["📊 06<br>Análisis final<br><sub>22.3 % · 99.9 %</sub>"]
 
     classDef datos fill:#DBEAFE,stroke:#2563EB,color:#1E3A8A
     classDef proc fill:#EDE9FE,stroke:#7C3AED,color:#4C1D95
@@ -134,10 +130,10 @@ flowchart LR
 | `03_Limpieza_Preprocesamiento.ipynb` | 7 pasos de limpieza de texto y 4 filtros de calidad | 💻 Local |
 | `04_Clasificacion_Reglas.ipynb` | Clasificador de reglas (Nivel 1) y generación del dataset balanceado | 💻 Local |
 | `05_BERT_Colab.ipynb` | Fine-tuning y evaluación de BERT (Nivel 2); clasificación del corpus completo | ☁️ Colab + GPU |
-| `07_Final_Analisis.ipynb` | Post-procesamiento (Nivel 3), clasificador de contexto (Nivel 4), **análisis temporal**, figuras y tablas del artículo | 💻 Local |
+| `06_Final_Analisis.ipynb` | Post-procesamiento (Nivel 3), clasificador de contexto (Nivel 4), **análisis temporal**, figuras y tablas del artículo | 💻 Local |
 
 > [!NOTE]
-> El análisis temporal (paso 6 de la Figura 1 del artículo) está integrado en el notebook `07_Final_Analisis.ipynb`, porque se calcula después del post-procesamiento.
+> El análisis temporal (paso 6 de la Figura 1 del artículo) está integrado en el notebook `06_Final_Analisis.ipynb`, porque se calcula después del post-procesamiento.
 
 ---
 
@@ -197,19 +193,12 @@ pip install pandas numpy matplotlib seaborn scipy scikit-learn praw==7.7.1
 
 ### 3️⃣ Credenciales de Reddit
 
-Copia la plantilla y completa tus credenciales de la [API de Reddit](https://www.reddit.com/prefs/apps):
-
-```bash
-cp config/credentials_template.py config/credentials.py
-```
-
-> [!CAUTION]
-> `config/credentials.py` está incluido en `.gitignore`. Nunca subas tus credenciales al repositorio.
+Completa tus credenciales de la [API de Reddit](https://www.reddit.com/prefs/apps):
 
 ### 4️⃣ Orden de ejecución
 
 ```
-01 → 02 → 03 → 04 → 05 (Colab) → 07
+01 → 02 → 03 → 04 → 05 (Colab) → 06
 ```
 
 <details>
@@ -319,12 +308,6 @@ r/AskWomen
 
 Este trabajo fue publicado en el ***International Journal of Combinatorial Optimization Problems and Informatics*** (IJCOPI), vol. 17, núm. 5, 2026, pp. 14–36.
 
-🔗 **DOI:** [10.61467/2007.1558.2026.v17i5.1404](https://doi.org/10.61467/2007.1558.2026.v17i5.1404)
-
-Forma parte del proyecto de tesis de licenciatura en Ciencias Computacionales de la Universidad Autónoma del Estado de Hidalgo (UAEH).
-
----
-
 ## 📚 Cómo citar
 
 Si utilizas este trabajo, por favor cita el artículo:
@@ -357,26 +340,15 @@ Si utilizas este trabajo, por favor cita el artículo:
 
 **Maricarmen Camacho Pérez**
 <br>
-Ingeniería en Ciencias Computacionales · Universidad Autónoma del Estado de Hidalgo
+Licenciatura en Ciencias Computacionales · Universidad Autónoma del Estado de Hidalgo
 
 [![GitHub](https://img.shields.io/badge/GitHub-mariimanguito-181717?style=flat-square&logo=github)](https://github.com/mariimanguito)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-maricarmen20-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/maricarmen20)
-
-<br>
-
-**Coautores y asesores:** Mireya Clavel-Maqueda · Eduardo Cornejo-Velazquez
-<br>
-<sub>Universidad Autónoma del Estado de Hidalgo, México</sub>
 
 </div>
 
 ---
 
-## 📜 Licencia
-
-Este proyecto se distribuye bajo la licencia **MIT**. Consulta el archivo [LICENSE](LICENSE) para más detalles.
-
-<div align="center">
 <br>
-<sub>Hecho con 💜 para visibilizar la violencia que no siempre se nota.</sub>
+<sub>Investigación orientada a visibilizar la violencia simbólica y a promover espacios tecnológicos más equitativos.</sub>
 </div>
